@@ -9,9 +9,6 @@ describe('Testes da Funcionalidade Usuários', () => {
           cy.request('usuarios').then(response=>{
                return ContratoUsuarios.validateAsync(response.headers.status)
           })
-
-
-
      });
 
      it('Deve listar usuários cadastrados', () => {
@@ -85,7 +82,6 @@ describe('Testes da Funcionalidade Usuários', () => {
                     }).then(response => {
                          expect(response.body.message).to.equal('Registro alterado com sucesso')
                     })
-
                })
      })
 
@@ -107,9 +103,7 @@ describe('Testes da Funcionalidade Usuários', () => {
                     expect(response.status).to.equal(200)
                })
           })
-
      })
-
 })
 
 
