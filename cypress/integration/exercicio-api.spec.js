@@ -5,14 +5,14 @@ import ContratoUsuarios from '../contracts/usuarios.contract'
 describe('Testes da Funcionalidade Usuários', () => {
 
      it('Deve validar contrato de usuários', () => {
-          //TODO: 
+          
           cy.request('usuarios').then(response=>{
                return ContratoUsuarios.validateAsync(response.headers.status)
           })
      });
 
      it('Deve listar usuários cadastrados', () => {
-          //TODO:
+          
           cy.request({
                method: 'GET',
                url: 'usuarios',
@@ -27,7 +27,7 @@ describe('Testes da Funcionalidade Usuários', () => {
 
 
      it('Deve cadastrar um usuário com sucesso', () => {
-          //TODO:
+          
           let usuarios = `Usuarios ${Math.floor(Math.random() * 10000)}`
           const fakerEmail = faker.internet.email()
           cy.cadastrarUsuario(usuarios, fakerEmail, '123456')
@@ -38,7 +38,7 @@ describe('Testes da Funcionalidade Usuários', () => {
 
 
      it('Deve validar um usuário com email inválido', () => {
-          //TODO: 
+          
           const nomeFaker = faker.name.findName()
           cy.request({
                method: 'POST',
@@ -61,7 +61,7 @@ describe('Testes da Funcionalidade Usuários', () => {
 
 
      it('Deve editar um usuário previamente cadastrado', () => {
-          //TODO: 
+          
           let fakerNome = faker.name.lastName()
           let fakerEmail = faker.internet.email()
 
@@ -87,7 +87,7 @@ describe('Testes da Funcionalidade Usuários', () => {
 
 
      it('Deve deletar um usuário previamente cadastrado', () => {
-          //TODO:
+          
           let fakerNome = faker.name.lastName()
           let fakerEmail = faker.internet.email()
           
